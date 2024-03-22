@@ -1,0 +1,152 @@
+<section class="all-products">
+  <h1>{{ collections.jackets.title }}</h1>
+  <div class="product-container">
+    <div class="all-products-wrapper">
+      {% for product in collections.jackets.products %}
+        <div class="product-card">
+          <img
+            width="300"
+            height="300"
+            loading="lazy"
+            src="
+              {{ product.featured_image
+              | image_url }}
+            "
+          >
+          <h3>{{ product.title | link_to: product.url }}</h3>
+          <h4>{{ product.price | money }}</h4>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<style>
+  .all-products {
+      background: {{ section.settings.background }};
+      color: {{ section.settings.text_color }};
+      padding: 20px;
+      overflow: hidden; /* Ocultar desbordamiento horizontal */
+    }
+
+    .product-container {
+      position: relative;
+      overflow-x: auto; /* Desplazamiento horizontal automático */
+      white-space: nowrap; /* Evitar el salto de línea en los productos */
+    }
+
+    .all-products-wrapper {
+      display: inline-flex; /* Utilizar flexbox para los productos */
+      transition: transform 0.3s ease;
+    }
+
+    .product-card {
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      flex: 0 0 auto; /* Los productos no se estirarán */
+      margin-right: 10px; /* Espacio entre productos */
+    }
+
+    .product-card img {
+      width: 100%; /* Las imágenes ocupan todo el espacio disponible */
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px; /* Bordes redondeados */
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 1.2rem; /* Tamaño de fuente del título */
+    }
+
+    .product-card h3 a:hover {
+      color: #333; /* Cambio de color al pasar el cursor */
+    }
+
+
+    .product-price {
+      font-weight: bold;
+      font-size: 1.1rem; /* Tamaño de fuente del precio */
+    }
+
+    .scroll-left,
+    .scroll-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      z-index: 1;
+    }
+
+    .scroll-left {
+      left: 10px;
+    }
+
+    .scroll-right {
+      right: 10px;
+    }
+
+    .scroll-left:hover,
+    .scroll-right:hover {
+      color: #000; /* Cambio de color al pasar el cursor */
+    }
+
+    @media (max-width: 768px) {
+      .product-card {
+        margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
+      }
+    }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const wrapper = document.querySelector('.all-collections-wrapper');
+    const scrollLeftButton = document.querySelector('.scroll-left');
+    const scrollRightButton = document.querySelector('.scroll-right');
+
+    scrollLeftButton.addEventListener('click', function () {
+      wrapper.scrollBy({
+        left: -300, // Adjust based on your card width
+        behavior: 'smooth',
+      });
+    });
+
+    scrollRightButton.addEventListener('click', function () {
+      wrapper.scrollBy({
+        left: 300, // Adjust based on your card width
+        behavior: 'smooth',
+      });
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "all-products",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "all-products"
+    }
+  ]
+}
+{% endschema %}

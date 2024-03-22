@@ -1,0 +1,46 @@
+{
+  "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "links_Awi7Qf": {
+            "type": "links",
+            "settings": {
+              "text": "About us",
+              "link": ""
+            }
+          },
+          "links_b4UYkC": {
+            "type": "links",
+            "settings": {
+              "text": "Collections",
+              "link": "shopify:\/\/collections"
+            }
+          },
+          "links_Twx6Ty": {
+            "type": "links",
+            "settings": {
+              "text": "Products",
+              "link": "shopify:\/\/collections\/all"
+            }
+          }
+        },
+        "block_order": [
+          "links_Awi7Qf",
+          "links_b4UYkC",
+          "links_Twx6Ty"
+        ],
+        "settings": {
+          "show_announcement": true,
+          "text": "Free shipping on all orders over $50",
+          "background": "#f4f4f4",
+          "text_color": "#000000"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+
+    <main id="main" role="main">
+      {{ content_for_layout }}
+      {% section 'three-images' %}
+      {% section 'more-info' %}
+      {% section 'all-collections' %}
+      {% section 'all-products' %}
+    </main>
+
+    {% section 'footer' %}
+  </body>
+</html>
