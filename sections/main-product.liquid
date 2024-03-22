@@ -29,19 +29,18 @@
 </section>
 
 <style>
-   .product-main {
-     background: {{ section.settings.background }}
-     ;
-     color: {{ section.settings.text_color }}
-     ;
-     padding: 10px;
+  .product-main {
+      background: {{ section.settings.background }}
+      ;
+      color: {{ section.settings.text_color }}
+      ;
+      padding: 10px;
+    }
+
+    .product-main-wrapper {
+      display: flex;
    }
-
-   .product-main-wrapper {
-     display: flex;
-  }
 </style>
-
 {% schema %}
 {
   "name": "Product-main",
