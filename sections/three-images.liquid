@@ -10,9 +10,9 @@
       </div>
     {% endif %}
 
-    {% if section.setting.image != blank %}
+    {% if section.setting.image2 != blank %}
       <div class="two-user">
-        <h1></h1>
+        <h1>HOLA COMO ESTAN</h1>
       </div>
     {% else %}
       <div class="two">
@@ -20,7 +20,7 @@
       </div>
     {% endif %}
 
-    {% if section.setting.image != blank %}
+    {% if section.setting.image3 != blank %}
       <div class="three-user">
         <h1></h1>
       </div>
@@ -46,13 +46,12 @@
   }
 
   .one-user {
-    background-image: url("{{ 'sections.settings.image1' | image_url }}");
+    background-image: url("{{ 'sections.settings.image' | image_url }}");
     width: 33.33%;
     height: 500px;
     background-size: cover;
     background-position: center;
   }
-
 
   .two {
     background-image: url("{{ 'two.png' | asset_url }}");
@@ -70,7 +69,6 @@
     background-position: center;
   }
 
-
   .three {
     background-image: url("{{ 'three.png' | asset_url }}");
     width: 33.33%;
@@ -80,7 +78,7 @@
   }
 
   .three-user {
-    background-image: url("{{ 'sections.settings.image3' | image_ur:  }}");
+    background-image: url("{{ 'sections.settings.image3' | image_url }}");
     width: 33.33%;
     height: 500px;
     background-size: cover;
