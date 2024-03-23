@@ -12,7 +12,7 @@
 
     {% if section.settings.image2 != blank %}
       <div class="two-user">
-        <h1>HOLA COMO ESTAN</h1>
+        <h1></h1>
       </div>
     {% else %}
       <div class="two">
@@ -46,7 +46,7 @@
   }
 
   .one-user {
-    background-image: url("{{ 'sections.settings.image' | image_url }}");
+    background-image: url("{{ 'section.settings.image' | image_url }}");
     width: 33.33%;
     height: 500px;
     background-size: cover;
@@ -62,7 +62,7 @@
   }
 
   .two-user {
-    background-image: url("{{ 'sections.settings.image2' | image_url }}");
+    background-image: url("{{ 'section.settings.image2' | image_url }}");
     width: 33.33%;
     height: 500px;
     background-size: cover;
@@ -78,7 +78,7 @@
   }
 
   .three-user {
-    background-image: url("{{ 'sections.settings.image3' | image_url }}");
+    background-image: url("{{ 'section.settings.image3' | image_url }}");
     width: 33.33%;
     height: 500px;
     background-size: cover;
